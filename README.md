@@ -1,6 +1,7 @@
 # Chess Commentator
 
-Chess beginners often have problems analyzing game by themselves -- it's sometimes hard to understand, why chess engines propose this or that line.
+Chess beginners often have problems analyzing games by themselves - it is sometimes hard to understand, why chess engines propose this or that line.
+
 Let's try to overcome this issue by using Mistral-7B to annotate chess games in a human-understandable way.
 
 ## Quickstart
@@ -18,7 +19,7 @@ which pip
 pip install chess
 ```
 
-Step 3: ones one of notebooks and play around.
+Step 3: open one of the notebooks and play around -- I suggest starting with `zero_few_shot`.
 
 
 __Troubleshooting__. I had issues with getting `bitsandbytes` to work. Eventually, it helped to build it from source:
@@ -34,7 +35,7 @@ python -m bitsandbytes
 
 - [x] Try zero-shot. 
 - [x] Try few-shot.
-- [ ] Establish manual evaluation pipeline -- a fixed set of games, for which good annotations are available. _In progress, 2 games selected for now._
+- [ ] Establish manual evaluation pipeline -- select a fixed set of games, for which good annotations are available. _In progress, 3 games selected for now._
 - [ ] Finetune with LoRA on available data. _In progress._
 - [ ] Collect more data, and build a curated dataset of annotated chess games in PGN format.
 - [ ] Try models other than Mistral.
@@ -42,11 +43,11 @@ python -m bitsandbytes
 
 
 ## Data
-Here is a list of potential data sources. For now I only use a subset of games from the first link.
+Here is a list of potential data sources. For now I only use a subset of the games from the first link.
 
 Online:
 - [PGN Library](https://www.angelfire.com/games3/smartbridge/) -- about 4000 annotated games in PGN (not all in English, though).
-- [Quickest Games](https://www.chessgames.com/perl/chesscollection?cid=1000554) collection on chessgames.com -- some of the quickest games that end in a checkmate. All of them are in 6 moves or less. Comments are scarce, but it's easy to commentate manually.
+- [Quickest Games](https://www.chessgames.com/perl/chesscollection?cid=1000554) collection on chessgames.com -- some of the quickest games that end in a checkmate. All of them are in 6 moves or less. Original comments are limited, but it's easy to re-annotate short games manually.
 - [Gameknot](https://gameknot.com/best-annotated-games.pl) -- annotated games from an old chess site. Comments are of varying quality, sometimes they contain spelling and grammatical errors.
 - Simply [search results](https://www.chessgames.com/perl/ezsearch.pl?search=annotated) for annotated games on chessgames.com.
 
