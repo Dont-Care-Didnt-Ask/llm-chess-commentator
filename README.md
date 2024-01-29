@@ -12,14 +12,15 @@ One can also use conda or mamba, but in my experience, conda is sometimes too sl
 
 Step 2: create an environment.
 ```
-micromamba create -n stein python=3.11 pytorch=2.1.2 pytorch-cuda=12.1 transformers=4.34 sentencepiece=0.1.99 accelerate=0.26.1 bitsandbytes=0.42.0 peft=0.7.1 datasets=2.14.7 matplotlib=3.8.2 pandas=2.2.0 jupyterlab=4.0.11 ipywidgets=8.1.1 jupyterlab_widgets=3.0.9 tqdm=4.66.1 -c pytorch -c nvidia -c conda-forge
+micromamba create -n llmcomment python=3.11 pytorch=2.1.2 pytorch-cuda=12.1 transformers=4.34 sentencepiece=0.1.99 accelerate=0.26.1 bitsandbytes=0.42.0 peft=0.7.1 datasets=2.14.7 matplotlib=3.8.2 pandas=2.2.0 jupyterlab=4.0.11 ipywidgets=8.1.1 jupyterlab_widgets=3.0.9 tqdm=4.66.1 -c pytorch -c nvidia -c conda-forge
+micromamba activate llmcomment
 
 which pip
 # ensure that you are using pip installed in the environment
 pip install chess
 ```
 
-Step 3: open one of the notebooks and play around -- I suggest starting with `zero_few_shot`.
+Step 3: open one of the notebooks and play around -- I suggest starting with `zero_and_few_shot`.
 
 
 __Troubleshooting__. I had issues with getting `bitsandbytes` to work. Eventually, it helped to build it from source:
